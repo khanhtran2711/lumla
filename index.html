@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lịch trình Phú Quốc 4N3Đ | Cần Thơ - Hà Tiên - Phú Quốc</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #006c67;
+      --primary-dark: #034744;
+      --secondary: #ffb703;
+      --accent: #ff6b35;
+      --soft: #f4fbf9;
+      --cream: #fff8ec;
+      --text: #18312f;
+      --muted: #667a77;
+      --line: #dbe9e6;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(0, 72, 68, 0.13);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Be Vietnam Pro", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #eefbf8 0%, #ffffff 38%, #fff8ec 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.82);
+      border-bottom: 1px solid rgba(219, 233, 230, 0.9);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), #14b8a6);
+      color: white;
+      box-shadow: 0 10px 24px rgba(0, 108, 103, 0.2);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: #335b58;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: var(--soft);
+      color: var(--primary);
+    }
+
+    .hero {
+      position: relative;
+      padding: 72px 0 54px;
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(4px);
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    .hero::before {
+      width: 340px;
+      height: 340px;
+      right: -120px;
+      top: 40px;
+      background: rgba(20, 184, 166, 0.18);
+    }
+
+    .hero::after {
+      width: 280px;
+      height: 280px;
+      left: -110px;
+      bottom: 40px;
+      background: rgba(255, 183, 3, 0.22);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(0, 108, 103, 0.1);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.8rem);
+      line-height: 1.06;
+      letter-spacing: -0.06em;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.06rem;
+      color: var(--muted);
+      max-width: 660px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--primary), #0f9f93);
+      box-shadow: 0 14px 28px rgba(0, 108, 103, 0.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: var(--line);
+      color: var(--primary-dark);
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 520px;
+      border-radius: 36px;
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.54)),
+        url("https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=80") center/cover;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: white;
+    }
+
+    .hero-card h2 {
+      font-size: 2rem;
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .floating-info {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      right: 22px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .info-pill {
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--primary-dark);
+      backdrop-filter: blur(10px);
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 26px;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.78rem;
+      margin-bottom: 8px;
+    }
+
+    h2.section-title {
+      font-size: clamp(1.7rem, 3vw, 2.7rem);
+      line-height: 1.15;
+      letter-spacing: -0.045em;
+      color: var(--primary-dark);
+    }
+
+    .section-desc {
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .quick-card,
+    .note-card,
+    .food-card,
+    .market-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 14px 34px rgba(0, 72, 68, 0.07);
+    }
+
+    .quick-card .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .quick-card h3,
+    .note-card h3,
+    .food-card h3,
+    .market-card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .quick-card p,
+    .note-card p,
+    .food-card p,
+    .market-card p,
+    .timeline-text,
+    .food-card li,
+    .market-card li {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 24px;
+    }
+
+    .day-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 22px;
+      align-items: start;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .day-label {
+      position: sticky;
+      top: 96px;
+      min-height: 230px;
+      border-radius: 24px;
+      padding: 22px;
+      color: white;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .day-label small {
+      opacity: 0.82;
+      font-weight: 700;
+    }
+
+    .day-label h3 {
+      font-size: 1.65rem;
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin: 8px 0;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .schedule-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 148px 1fr;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid #e7f0ee;
+      background: linear-gradient(180deg, #ffffff, #fbfffe);
+    }
+
+    .time {
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .timeline-title {
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .note-grid,
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .note-card {
+      background: linear-gradient(180deg, #ffffff, #f6fffc);
+    }
+
+    .food-card ul,
+    .market-card ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .food-card li,
+    .market-card li {
+      margin: 7px 0;
+    }
+
+    .market-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .map-box {
+      min-height: 360px;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(3,71,68,0.1), rgba(3,71,68,0.45)),
+        url("https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1200&q=80") center/cover;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      color: white;
+      overflow: hidden;
+    }
+
+    .map-box h3 {
+      font-size: 1.8rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .footer {
+      padding: 36px 0 46px;
+      color: #64817d;
+      text-align: center;
+    }
+
+    .highlight {
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .day-card,
+      .market-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        min-height: 430px;
+      }
+
+      .quick-grid,
+      .note-grid,
+      .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .day-label {
+        position: relative;
+        top: auto;
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 24px, 1160px);
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .floating-info,
+      .quick-grid,
+      .note-grid,
+      .food-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .section-head {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="brand-icon">🌴</span>
+        <span>Phú Quốc Family Trip</span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Tổng quan</a>
+        <a href="#itinerary">Lịch trình</a>
+        <a href="#food">Đặc sản</a>
+        <a href="#night-market">Chợ đêm</a>
+        <a href="#notes">Lưu ý</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">🚗 Cần Thơ → Hà Tiên → Phú Quốc</div>
+        <h1>Tour Phú Quốc 4 ngày 3 đêm cho gia đình có bé nhỏ</h1>
+        <p>
+          Lịch trình được sắp xếp theo hướng nhẹ nhàng, thực tế và dễ di chuyển cho gia đình gồm 3 người lớn và 1 bé 21 tháng tuổi. Trọng tâm là nghỉ đủ, chơi vừa sức, ưu tiên Nam đảo trước rồi chuyển lên Vinpearl để đi VinWonders và Safari.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#itinerary">Xem lịch trình chi tiết</a>
+          <a class="btn btn-light" href="#food">Món nên thử</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Thông tin nhanh chuyến đi">
+        <div class="floating-info">
+          <div class="info-pill">📅 7/6 – 10/6</div>
+          <div class="info-pill">👨‍👩‍👧 3 người lớn + 1 bé</div>
+          <div class="info-pill">🏨 2 đêm Nam đảo</div>
+          <div class="info-pill">🏡 1 đêm Vinpearl Villa</div>
+        </div>
+        <div>
+          <h2>Đi chậm một chút, vui nhiều hơn.</h2>
+          <p>Không nhồi lịch ngày đầu, ưu tiên bé ngủ trưa, chơi điểm gần và chọn món ăn phù hợp sau khi di chuyển dài.</p>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Tổng quan</div>
+            <h2 class="section-title">Những điểm chính cần nhớ</h2>
+          </div>
+          <p class="section-desc">Lịch trình này ưu tiên sự thoải mái cho bé nhỏ, thời gian lái xe hợp lý và các điểm tham quan nổi bật theo từng khu vực.</p>
+        </div>
+
+        <div class="quick-grid">
+          <div class="quick-card">
+            <div class="icon">⛴️</div>
+            <h3>Đi phà cùng ô tô</h3>
+            <p>Canh có mặt tại bến phà khoảng 09:00 để chuẩn bị cho chuyến 09:30 từ Hà Tiên sang Phú Quốc.</p>
+          </div>
+          <div class="quick-card">
+            <div class="icon">🌅</div>
+            <h3>Nam đảo thư giãn</h3>
+            <p>Ngày đầu chỉ dạo Sunset Town, Cầu Hôn và khu Địa Trung Hải để tránh quá tải sau chặng đường dài.</p>
+          </div>
+          <div class="quick-card">
+            <div class="icon">🎢</div>
+            <h3>VinWonders buổi chiều</h3>
+            <p>Ngày 3 sau khi nhận villa, ưu tiên thủy cung và các khu trong nhà trước, sau đó mới ra ngoài trời.</p>
+          </div>
+          <div class="quick-card">
+            <div class="icon">🦒</div>
+            <h3>Safari buổi sáng</h3>
+            <p>Đi sớm để mát hơn, ưu tiên Safari bus trước rồi mới xem thêm khu thú mở nếu bé còn khỏe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="itinerary">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Timeline</div>
+            <h2 class="section-title">Lịch trình chi tiết 4 ngày 3 đêm</h2>
+          </div>
+          <p class="section-desc">Các mốc giờ có thể linh hoạt 15–30 phút tùy tình trạng phà, thời tiết, sức khỏe của bé và tốc độ di chuyển thực tế.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="day-card">
+            <div class="day-label">
+              <div>
+                <small>Ngày 1 — 7/6</small>
+                <h3>Cần Thơ → Hà Tiên → Phú Quốc → Nam đảo</h3>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Di chuyển chính</span>
+                <span class="tag">Sunset Town</span>
+                <span class="tag">Nghỉ sớm</span>
+              </div>
+            </div>
+            <div class="schedule-list">
+              <div class="schedule-item">
+                <div class="time">03:00 – 08:10</div>
+                <div><div class="timeline-title">Khởi hành từ Cần Thơ đi Hà Tiên</div><p class="timeline-text">Cho bé ngủ tiếp trên xe. Người lớn chuẩn bị nước, sữa, bánh mềm, khăn ướt, túi nôn xe và áo khoác mỏng.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">08:10 – 08:45</div>
+                <div><div class="timeline-title">Ăn sáng tại Khách sạn Sài Gòn – Hà Tiên</div><p class="timeline-text">Có thể uống cà phê, ăn sáng nhanh và nhờ hỗ trợ order. Từ khách sạn qua bến phà khoảng 6 phút. Mục tiêu: có mặt ở bến lúc 09:00.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">09:30 – 12:30</div>
+                <div><div class="timeline-title">Đi phà Hà Tiên → Phú Quốc</div><p class="timeline-text">Dự kiến cập cảng Bãi Vòng lúc 12:30. Gia đình đi ô tô nên chuẩn bị giấy tờ xe và có mặt sớm để làm thủ tục.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">12:30 – 13:15</div>
+                <div><div class="timeline-title">Rời cảng Bãi Vòng về Nam đảo</div><p class="timeline-text">Di chuyển xuống An Thới hoặc Sunset Town, thường mất khoảng 35–50 phút tùy vị trí khách sạn và tình trạng đường.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">13:15 – 14:15</div>
+                <div><div class="timeline-title">Ăn trưa nhẹ</div><p class="timeline-text">Gợi ý: bún quậy, bánh canh ghẹ, cơm hải sản hoặc cháo hải sản. Chưa nên ăn gỏi cá trích ngay buổi trưa vì vừa đi đường dài và đi phà.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">14:15 – 15:30</div>
+                <div><div class="timeline-title">Check-in khách sạn Nam đảo</div><p class="timeline-text">Cho bé tắm, uống sữa và ngủ trưa để hồi sức sau chặng di chuyển dài từ 03:00 sáng.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">16:00 – 17:30</div>
+                <div><div class="timeline-title">Dạo Sunset Town / Cầu Hôn / khu Địa Trung Hải</div><p class="timeline-text">Đi nhẹ, chụp hình, không nên xếp tour đảo hoặc lịch vận động nhiều trong ngày đầu.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">18:00 – 19:30</div>
+                <div><div class="timeline-title">Ăn tối Nam đảo</div><p class="timeline-text">Người lớn có thể thử nhum nướng, ghẹ, mực trứng, cá bớp nấu canh chua, còi biên mai. Bé nên ăn cơm, cháo hoặc cá hấp ít gia vị.</p></div>
+              </div>
+              <div class="schedule-item">
+                <div class="time">20:00 trở đi</div>
+                <div><div class="timeline-title">Về khách sạn nghỉ</div><p class="timeline-text">Nếu còn khỏe có thể dạo thêm Sunset Town, nhưng với bé 21 tháng nên ưu tiên ngủ sớm.</p></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-label">
+              <div>
+                <small>Ngày 2 — 8/6</small>
+                <h3>Hòn Thơm / Bãi Sao / Sunset Town</h3>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Cáp treo</span>
+                <span class="tag">Bãi Sao</span>
+                <span class="tag">Lịch nhẹ</span>
+              </div>
+            </div>
+            <div class="schedule-list">
+              <div class="schedule-item"><div class="time">07:30 – 08:30</div><div><div class="timeline-title">Ăn sáng</div><p class="timeline-text">Gợi ý bún quậy Phú Quốc hoặc bánh canh chả cá thu. Nếu bé khó ăn, ưu tiên buffet hoặc món quen.</p></div></div>
+              <div class="schedule-item"><div class="time">08:45 – 11:30</div><div><div class="timeline-title">Đi cáp treo Hòn Thơm</div><p class="timeline-text">Nên đi buổi sáng vì mát hơn, bé đỡ mệt hơn và chụp hình đẹp hơn.</p></div></div>
+              <div class="schedule-item"><div class="time">11:30 – 12:30</div><div><div class="timeline-title">Ăn trưa</div><p class="timeline-text">Có thể ăn tại Hòn Thơm hoặc quay về Nam đảo ăn tùy sức khỏe của bé.</p></div></div>
+              <div class="schedule-item"><div class="time">13:00 – 15:30</div><div><div class="timeline-title">Nghỉ trưa tại khách sạn</div><p class="timeline-text">Đây là khoảng nghỉ quan trọng để chiều đi biển hoặc dạo nhẹ không bị quá sức.</p></div></div>
+              <div class="schedule-item"><div class="time">16:00 – 17:30</div><div><div class="timeline-title">Bãi Sao hoặc Sunset Town</div><p class="timeline-text">Nếu trời đẹp, đi Bãi Sao. Nếu trời mưa hoặc bé mệt, đổi sang dạo nhẹ tại Sunset Town.</p></div></div>
+              <div class="schedule-item"><div class="time">18:00 – 19:30</div><div><div class="timeline-title">Ăn tối hải sản</div><p class="timeline-text">Tối này phù hợp để người lớn thử gỏi cá trích. Không cho bé ăn đồ sống hoặc món nướng quá nhiều gia vị.</p></div></div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-label">
+              <div>
+                <small>Ngày 3 — 9/6</small>
+                <h3>Nam đảo → Vinpearl Villa → VinWonders</h3>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Chuyển khu</span>
+                <span class="tag">Grand World</span>
+                <span class="tag">VinWonders</span>
+              </div>
+            </div>
+            <div class="schedule-list">
+              <div class="schedule-item"><div class="time">07:30 – 08:30</div><div><div class="timeline-title">Ăn sáng và thu dọn hành lý</div><p class="timeline-text">Gợi ý bún kèn, bánh canh ghẹ hoặc buffet khách sạn nếu có bé nhỏ cho tiện.</p></div></div>
+              <div class="schedule-item"><div class="time">08:30 – 10:15</div><div><div class="timeline-title">Check-out và lái xe lên Vinpearl</div><p class="timeline-text">Đi sớm vì quãng đường từ Nam đảo lên Bắc đảo/Vinpearl khá xa.</p></div></div>
+              <div class="schedule-item"><div class="time">10:15 – 11:30</div><div><div class="timeline-title">Đến Vinpearl, gửi hành lý</div><p class="timeline-text">Nếu chưa nhận villa, có thể nghỉ tại sảnh hoặc đi Grand World nhẹ.</p></div></div>
+              <div class="schedule-item"><div class="time">11:30 – 13:00</div><div><div class="timeline-title">Ăn trưa tại Vinpearl / Grand World</div><p class="timeline-text">Chọn nhà hàng gần khu lưu trú để tiết kiệm sức và thời gian di chuyển.</p></div></div>
+              <div class="schedule-item"><div class="time">13:00 – 15:00</div><div><div class="timeline-title">Nhận villa, cho bé ngủ trưa</div><p class="timeline-text">Nếu bé chưa buồn ngủ thì cho bé chơi nhẹ trong villa, tránh vận động ngoài nắng.</p></div></div>
+              <div class="schedule-item"><div class="time">15:30 – 18:30</div><div><div class="timeline-title">Đi VinWonders</div><p class="timeline-text">Ưu tiên khu trong nhà như thủy cung/Cung điện Hải Vương trước, sau đó mới đi các khu ngoài trời.</p></div></div>
+              <div class="schedule-item"><div class="time">18:30 – 19:30</div><div><div class="timeline-title">Ăn buffet tối ở villa</div><p class="timeline-text">Ăn tối gần nơi ở để bé nghỉ nhanh sau buổi chơi VinWonders.</p></div></div>
+              <div class="schedule-item"><div class="time">20:00 trở đi</div><div><div class="timeline-title">Về villa nghỉ</div><p class="timeline-text">Không nên chơi quá khuya vì sáng hôm sau đi Safari.</p></div></div>
+            </div>
+          </article>
+
+          <article class="day-card">
+            <div class="day-label">
+              <div>
+                <small>Ngày 4 — 10/6</small>
+                <h3>Vinpearl Safari → Phà về Hà Tiên → Cần Thơ</h3>
+              </div>
+              <div class="tag-row">
+                <span class="tag">Safari</span>
+                <span class="tag">Phà 13:30</span>
+                <span class="tag">Về Cần Thơ</span>
+              </div>
+            </div>
+            <div class="schedule-list">
+              <div class="schedule-item"><div class="time">07:00 – 07:45</div><div><div class="timeline-title">Ăn sáng tại villa</div><p class="timeline-text">Ăn gọn, chuẩn bị đồ cho bé và kiểm tra lại hành lý trước khi đi Safari.</p></div></div>
+              <div class="schedule-item"><div class="time">08:15 – 11:00</div><div><div class="timeline-title">Vinpearl Safari</div><p class="timeline-text">Đi sớm để mát, ưu tiên khu Safari bus trước, sau đó xem thêm khu thú mở nếu bé còn khỏe.</p></div></div>
+              <div class="schedule-item"><div class="time">11:00 – 11:45</div><div><div class="timeline-title">Về villa, tắm nhanh cho bé</div><p class="timeline-text">Cho bé ăn nhẹ, thay đồ thoải mái và thu dọn hành lý.</p></div></div>
+              <div class="schedule-item"><div class="time">11:45 – 12:15</div><div><div class="timeline-title">Check-out</div><p class="timeline-text">Kiểm tra đồ cá nhân, giấy tờ xe, vé phà và đồ ăn nhẹ cho chặng về.</p></div></div>
+              <div class="schedule-item"><div class="time">12:15 – 13:00</div><div><div class="timeline-title">Di chuyển ra cảng Bãi Vòng</div><p class="timeline-text">Làm thủ tục xe lên phà, nên có mặt sớm để tránh cập rập.</p></div></div>
+              <div class="schedule-item"><div class="time">13:30 – 16:30</div><div><div class="timeline-title">Phà Phú Quốc → Hà Tiên</div><p class="timeline-text">Phương án về chuyến 13:30 giúp gia đình về Cần Thơ không quá khuya.</p></div></div>
+              <div class="schedule-item"><div class="time">16:30 – 17:00</div><div><div class="timeline-title">Xuống phà, ổn định xe</div><p class="timeline-text">Cho bé ăn nhẹ, vệ sinh cá nhân và nghỉ vài phút trước khi lái xe đường dài.</p></div></div>
+              <div class="schedule-item"><div class="time">17:00 – 22:30/23:00</div><div><div class="timeline-title">Lái xe Hà Tiên → Cần Thơ</div><p class="timeline-text">Nên dừng ít nhất 1 lần để ăn tối nhẹ, đổi không khí và cho bé nghỉ.</p></div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="food">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Food Guide</div>
+            <h2 class="section-title">Đặc sản Phú Quốc nên thử</h2>
+          </div>
+          <p class="section-desc">Nên chia món theo buổi để dễ ăn, tránh ăn hải sản sống ngay sau khi đi phà và luôn tách món riêng cho bé.</p>
+        </div>
+
+        <div class="food-grid">
+          <div class="food-card">
+            <h3>Ăn sáng / ăn trưa nhẹ</h3>
+            <ul>
+              <li><span class="highlight">Bún quậy Phú Quốc</span> – món đặc trưng, nước dùng thanh, phù hợp ăn sáng.</li>
+              <li><span class="highlight">Bún kèn</span> – vị béo thơm, lạ miệng, nên thử trong ngày 3.</li>
+              <li><span class="highlight">Bánh canh ghẹ</span> – dễ ăn, hợp cho bữa trưa hoặc bữa sáng muộn.</li>
+              <li><span class="highlight">Cháo hải sản</span> – lựa chọn an toàn sau khi đi đường dài.</li>
+            </ul>
+          </div>
+          <div class="food-card">
+            <h3>Hải sản buổi tối</h3>
+            <ul>
+              <li><span class="highlight">Ghẹ Hàm Ninh</span> – thịt ngọt, nên ăn hấp để cảm nhận vị tươi.</li>
+              <li><span class="highlight">Nhum nướng mỡ hành</span> – món nên thử khi ăn hải sản Phú Quốc.</li>
+              <li><span class="highlight">Mực trứng hấp/nướng</span> – dễ gọi, hợp nhóm gia đình.</li>
+              <li><span class="highlight">Còi biên mai nướng</span> – món nhậu/ăn chơi nổi tiếng.</li>
+            </ul>
+          </div>
+          <div class="food-card">
+            <h3>Món người lớn nên thử</h3>
+            <ul>
+              <li><span class="highlight">Gỏi cá trích</span> – nên ăn vào tối ngày 2, khi cả nhà đã ổn định sức khỏe.</li>
+              <li><span class="highlight">Cá bớp nấu canh chua</span> – hợp bữa tối gia đình.</li>
+              <li><span class="highlight">Tiêu Phú Quốc</span> – có thể mua làm quà.</li>
+              <li><span class="highlight">Nước mắm Phú Quốc</span> – đặc sản truyền thống, nên chọn nơi uy tín.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="night-market">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Evening Option</div>
+            <h2 class="section-title">Chợ đêm nên đi ở Phú Quốc</h2>
+          </div>
+          <p class="section-desc">Chợ đêm phù hợp để ăn vặt, mua quà và dạo sau bữa tối. Tuy nhiên, vì lịch của gia đình có bé nhỏ, nên chỉ đi nếu bé còn khỏe.</p>
+        </div>
+
+        <div class="market-wrap">
+          <div class="map-box">
+            <div>
+              <h3>Chợ đêm Phú Quốc</h3>
+              <p>Khu trung tâm Dương Đông, thích hợp đi buổi tối để ăn hải sản, kem cuộn, đậu phộng Chou Chou, bánh khéo và mua quà.</p>
+            </div>
+          </div>
+
+          <div class="market-card">
+            <h3>Thông tin gợi ý</h3>
+            <ul>
+              <li><span class="highlight">Vị trí:</span> khu đường Bạch Đằng – Nguyễn Đình Chiểu, Dương Đông, Phú Quốc.</li>
+              <li><span class="highlight">Giờ đi hợp lý:</span> khoảng 18:00 – 21:00, tránh đi quá khuya nếu có bé nhỏ.</li>
+              <li><span class="highlight">Nên thử:</span> hải sản nướng, ghẹ, nhum, bánh khéo, kẹo chỉ, kem cuộn, đậu phộng rang vị.</li>
+              <li><span class="highlight">Lưu ý:</span> hỏi giá trước khi gọi món, chọn quán đông khách, hạn chế đồ sống cho trẻ nhỏ.</li>
+              <li><span class="highlight">Nên xếp vào:</span> tối ngày 2 nếu cả nhà còn khỏe; ngày 3 và 4 nên ưu tiên nghỉ vì đã chuyển lên Vinpearl và về đất liền.</li>
+            </ul>
+            <div class="hero-actions" style="margin-top: 18px;">
+              <a class="btn btn-primary" href="https://www.google.com/maps/search/Ch%E1%BB%A3+%C4%91%C3%AAm+Ph%C3%BA+Qu%E1%BB%91c" target="_blank" rel="noopener">Mở Google Maps</a>
+              <a class="btn btn-light" href="#itinerary">Quay lại lịch trình</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Family Notes</div>
+            <h2 class="section-title">Lưu ý riêng cho gia đình có bé 21 tháng</h2>
+          </div>
+        </div>
+
+        <div class="note-grid">
+          <div class="note-card">
+            <h3>Chuẩn bị trên xe</h3>
+            <p>Nước, sữa, bánh mềm, khăn ướt, túi nôn, áo khoác mỏng, tã dự phòng, đồ chơi nhỏ và thuốc cơ bản cho bé.</p>
+          </div>
+          <div class="note-card">
+            <h3>Ăn uống cho bé</h3>
+            <p>Ưu tiên cháo, cơm mềm, cá hấp, canh, trái cây dễ ăn. Tránh đồ sống, cay, nướng cháy cạnh hoặc quá nhiều gia vị.</p>
+          </div>
+          <div class="note-card">
+            <h3>Lịch chơi</h3>
+            <p>Mỗi ngày nên có một khoảng ngủ trưa rõ ràng. Nếu bé mệt, bỏ bớt điểm phụ; không cần cố đi đủ.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Phú Quốc 4N3Đ · Thiết kế lịch trình theo hướng gia đình, nhẹ nhàng, thực tế và ưu tiên trải nghiệm an toàn cho bé nhỏ.</p>
+    </div>
+  </footer>
+</body>
+</html>
